@@ -1,0 +1,119 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+<!-- Greetings and Politeness -->
+<category> <pattern> HELLO </pattern>
+  <template>Hello! How are you?</template> </category>
+
+<category> <pattern> HELLO * </pattern>
+  <template><srai>HELLO</srai></template> </category>
+
+<category> <pattern> HI </pattern>
+  <template><srai>HELLO</srai></template> </category>
+
+<category> <pattern> HI * </pattern>
+  <template><srai>HELLO</srai></template> </category>
+
+<category> <pattern> HOW ARE YOU </pattern>
+  <template>I'm functioning within normal parameters, thanks for asking.</template></category>
+
+<category><pattern> I AM FINE </pattern>
+  <template>That's good to know. What would you like to discuss about?</template></category>
+
+<category><pattern> BYE </pattern>
+  <template>#0$Bye! Nice talking to you. You take care now.</template></category>
+
+<category><pattern> GOODBYE </pattern>
+  <template><srai>BYE</srai></template></category>
+
+<category><pattern> EXIT </pattern>
+  <template><srai>BYE</srai></template></category>
+
+<category> <pattern> THANKS </pattern>
+  <template>You are welcome.</template></category>
+
+<category> <pattern> THANK YOU </pattern>
+  <template><srai>THANKS</srai></template></category>
+
+<category> <pattern> CHEERS </pattern>
+  <template>Sure mate.</template></category>
+<!-- Highways Questions-->
+<category> <pattern> HOW LONG DOES IT TAKE TO GET A STREETLIGHT FIXED </pattern>
+<template> It takes 10 working days </template></category>
+<category> <pattern> WHEN DO STREET LIGHTS DIM </pattern>
+<template> The new LEDs will be pre-set to dim down between the hours of 10pm and 7am unless there is a history of night-time accidents in the area. </template></category>
+<category> <pattern> WHY DO WE HAVE NEW STREETLIGHTS </pattern>
+<template> The old lanterns are very inefficient and are more expensive to repair and to run. The new LED lights should be 60% cheaper to run than the old lanterns they are replacing. </template></category>
+<category> <pattern> WHY HASENT MY STREET LIGHT BEEN FIXED </pattern>
+<template> Some streetlight faults need to be repaired by an electricity company; in these cases it will often take longer for repairs to be carried out. </template></category>
+<category> <pattern> WHY CAN I NOT SEE MY STREET LIGHT </pattern>
+<template> NCC is not responsible for lighting: Car Parks, Garages, Parks and Recreation grounds. These are often the responsibllity of the local district council or a private land owner </template></category>
+<category> <pattern> IS STREET LIGHTING A LEGAL responsibllity </pattern>
+<template> We are not legally required to provide street lighting, however it is recognised as a good way to help reduce crime and accidents. </template></category>
+<category> <pattern> HOW CAN IF FIND OUT WHICH STREETLIGHT IS ON MY ROAD</pattern>
+<template> Each street light is numbered please look for this on the pole </template></category>
+<category> <pattern> MY STREET LIGHT COLUMN NEEDS REPLACING</pattern>
+<template> Where a streetlight column needs replacing, we prioritise those in the worst condition first and try to combine similar works together.</template></category>
+<category> <pattern> HOW LONG UNTIL I GET LED STREETLIGHTS</pattern>
+<template> To replace all our old lanterns to LED will be a four year programme. </template></category>
+<category> <pattern> WHERE CAN I REPORT A STREET LIGHT DEFECT</pattern>
+<template> https://www.nottinghamshire.gov.uk/transport/roads/street-lighting/report-a-streetlight-defect </template></category>
+
+<category> <pattern> CHEERS * </pattern>
+  <template>Sure mate.</template></category>
+  <category><pattern> PLEASE TRANSLATE * </pattern>
+  <template>#11$<star/></template></category>
+<!-- Weather API -->
+<category><pattern> WHAT IS THE WEATHER LIKE IN * </pattern>
+  <template>#2$<star/></template></category>
+
+<category><pattern> HOW IS THE WEATHER IN * </pattern>
+  <template><srai>WHAT IS THE WEATHER LIKE IN <star/></srai></template></category>
+<category><pattern> TELL ME ABOUT REPORT * </pattern>
+  <template>#51$<star/></template></category>
+<category><pattern> SET LANGUAGE TO * </pattern>
+  <template>#70$<star/></template></category>
+<!--FOK Task 2-->
+<category>
+	<pattern>I KNOW THAT * IS *</pattern>
+  	<template>
+  		#3$<star index="1"/> is <star index="2"/>
+	</template>
+</category>  
+<category>
+	<pattern>CHECK THAT * IS *</pattern>
+  	<template>
+  		#4$<star index="1"/> is <star index="2"/>
+	</template>
+</category>  
+<category>
+	<pattern>CHECK THAT * HAS *</pattern>
+  	<template>
+  		#5$<star index="1"/> has <star index="2"/>
+	</template>
+</category>  
+<category><pattern> WHAT DO YOU KNOW </pattern>
+  <template>#5$<star/></template></category>
+<category><pattern> I WANT TO PLAY A GAME </pattern>
+  <template>#52$<star/></template></category>
+<category><pattern> I WOULD LIKE TO LEAVE A COMMENT </pattern>
+  <template>#53$<star/></template></category>  
+<!--- Wikipedia API -->
+<category><pattern> WHAT IS A * </pattern>
+  <template>#1$<star index="1"/></template></category>
+
+<category><pattern> WHAT IS AN * </pattern>
+  <template><srai>WHAT IS A <star/></srai></template></category>
+
+<category><pattern> WHAT IS * </pattern>
+  <template><srai>WHAT IS A <star/></srai></template></category>
+
+<category><pattern> DEFINE * </pattern>
+  <template><srai>WHAT IS A <star/></srai></template></category>
+
+<category><pattern> WHO IS * </pattern>
+  <template><srai>WHAT IS A <star/></srai></template></category>
+
+<!-- Default reaction -->
+<category><pattern> * </pattern>
+  <template>#99$<star index="1"/></template></category>
+</aiml>
